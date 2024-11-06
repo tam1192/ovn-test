@@ -47,8 +47,7 @@ ip netns exec ${NS_NAME} ip a a ${ADDR} dev ${VETH_NAME}nb
 ### delete
 ```bash
 VETH_NAME="veth20"; \
+NS_NAME="ns1"; \
+ip netns del ${NS_NAME}
 microovn.ovs-vsctl del-port ${VETH_NAME}sb
-ip link set ${VETH_NAME}nb down;\
-ip link set ${VETH_NAME}sb down;\
-ip link del ${VETH_NAME}sb;
 ```
